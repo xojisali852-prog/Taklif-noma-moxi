@@ -1,0 +1,300 @@
+<!doctype html>
+<html lang="uz">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#080808">
+  <title>Xojiakbar &amp; Mohinur — To‘y taklifnomasi</title>
+  <style>
+    :root{
+      --bg:#080808; --panel:#11110f; --gold:#d8b76a; --gold2:#f7e7b0;
+      --muted:#b8b1a0; --line:rgba(216,183,106,.28); --white:#f7f3e9;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;background:radial-gradient(ellipse at 50% 0%,#292111 0%,#0b0b09 36%,var(--bg) 75%);color:var(--white);font-family:Georgia,"Times New Roman",serif}
+    button,input,textarea{font:inherit}
+    button,a{ -webkit-tap-highlight-color:transparent }
+    .shell{width:min(100% - 28px,1000px);margin:24px auto 60px}
+    .frame{position:relative;border:1px solid var(--gold);padding:clamp(18px,4vw,46px);background:linear-gradient(145deg,rgba(24,22,16,.97),rgba(7,7,7,.98));box-shadow:0 22px 70px #000;border-radius:4px;overflow:hidden}
+    .frame:before,.frame:after{content:"✧";position:absolute;color:var(--gold);font-size:28px;opacity:.8}
+    .frame:before{top:12px;left:14px}.frame:after{right:14px;bottom:12px}
+    .eyebrow{letter-spacing:.28em;text-transform:uppercase;color:var(--gold);font-size:.72rem}
+    .hero{text-align:center;min-height:510px;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:38px 8px}
+    .ornament{color:var(--gold);font-size:2.2rem;margin-bottom:20px;animation:float 4s ease-in-out infinite}
+    h1{font-weight:normal;font-size:clamp(2.3rem,7vw,5rem);line-height:1.12;margin:18px 0;color:var(--gold2);text-shadow:0 0 24px rgba(216,183,106,.12)}
+    h1 span{display:block;font-style:italic;font-size:.58em;margin:8px 0;color:var(--gold)}
+    .hero p{color:var(--muted);line-height:1.8;max-width:540px}
+    .gold-line{height:1px;width:min(220px,60%);background:linear-gradient(90deg,transparent,var(--gold),transparent);margin:20px auto}
+    .button{border:1px solid var(--gold);background:linear-gradient(120deg,#f3dfa0,#b68b37);color:#171208;padding:13px 22px;text-decoration:none;display:inline-block;cursor:pointer;letter-spacing:.05em;transition:transform .2s,filter .2s}
+    .button:hover{transform:translateY(-2px);filter:brightness(1.08)}
+    .button.ghost{background:transparent;color:var(--gold2)}
+    .music{position:fixed;right:18px;bottom:18px;width:48px;height:48px;border-radius:50%;border:1px solid var(--gold);background:#16130c;color:var(--gold2);font-size:20px;z-index:10;cursor:pointer;box-shadow:0 4px 22px #000}
+    section{padding:34px 0;border-top:1px solid var(--line);text-align:center}
+    section h2{font-weight:normal;color:var(--gold2);font-size:clamp(1.5rem,4vw,2.15rem);margin:0 0 12px}
+    .sub{color:var(--muted);line-height:1.7;margin:0 auto 22px;max-width:680px}
+    .details{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:24px}
+    .detail{border:1px solid var(--line);padding:18px 10px;background:rgba(255,255,255,.018)}
+    .detail .symbol{font-size:1.5rem;color:var(--gold);margin-bottom:10px}
+    .detail strong{display:block;color:var(--gold2);font-weight:normal;margin-bottom:8px}
+    .detail p{margin:0;color:var(--muted);font-size:.94rem;line-height:1.5}
+    .countdown{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;max-width:650px;margin:24px auto 0}
+    .timebox{border:1px solid var(--line);padding:16px 5px;background:linear-gradient(180deg,#17150f,#0b0b0a)}
+    .timebox strong{display:block;font-size:clamp(1.4rem,4vw,2.3rem);font-weight:normal;color:var(--gold2)}
+    .timebox span{font-size:.75rem;color:var(--muted);letter-spacing:.08em}
+    .calendar-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;text-align:left;margin-top:26px}
+    .month{border:1px solid var(--line);padding:14px;background:rgba(255,255,255,.018);min-width:0}
+    .month h3{text-align:center;color:var(--gold2);font-weight:normal;font-size:1.05rem;margin:0 0 12px}
+    .days{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:3px;text-align:center;font-family:Arial,sans-serif;font-size:.78rem}
+    .days span{padding:7px 0;border-radius:50%;min-width:0}
+    .days .weekday{color:var(--gold);font-size:.68rem;font-weight:bold}
+    .days .empty{visibility:hidden}
+    .days .wedding-day{background:var(--gold);color:#0b0904;font-weight:bold;box-shadow:0 0 12px #d8b76a66}
+    .calendar-note{font-size:.85rem;color:var(--muted);margin-top:16px}
+    .mapbox{border:1px solid var(--line);padding:22px;background:#0d0d0b}
+    .mapbox p{color:var(--muted);line-height:1.7}
+    form{max-width:620px;margin:20px auto 0;text-align:left}
+    label{display:block;color:var(--gold2);font-size:.9rem;margin:14px 0 7px}
+    input,textarea{width:100%;padding:13px;background:#0a0a09;color:var(--white);border:1px solid var(--line);outline:none;border-radius:0}
+    input:focus,textarea:focus{border-color:var(--gold)}
+    textarea{min-height:110px;resize:vertical}
+    .form-actions{text-align:center;margin-top:16px}
+    .wishes{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:24px;text-align:left}
+    .wish{padding:16px;border:1px solid var(--line);background:#0b0b09;overflow-wrap:anywhere}
+    .wish strong{color:var(--gold2);font-weight:normal}.wish p{color:var(--muted);line-height:1.55;margin-bottom:0}
+    .foot{text-align:center;padding:28px 0 4px;color:#8e8778;font-size:.8rem;letter-spacing:.1em}
+    .small-note{font-size:.82rem;color:#958d7c;line-height:1.6}
+    @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
+    @media(max-width:760px){.calendar-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.details{grid-template-columns:1fr}.hero{min-height:440px}}
+    @media(max-width:460px){.shell{width:min(100% - 16px,1000px);margin:8px auto 30px}.frame{padding:22px 13px}.calendar-grid{gap:8px}.month{padding:9px 5px}.days{font-size:.69rem;gap:1px}.days span{padding:6px 0}.days .weekday{font-size:.59rem}.countdown{gap:5px}.timebox{padding:12px 2px}.wishes{grid-template-columns:1fr}}
+    @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;scroll-behavior:auto!important;transition:none!important}}
+  </style>
+</head>
+<body>
+  <button class="music" id="musicButton" aria-label="Musiqani yoqish yoki o‘chirish" title="Musiqa">♫</button>
+  <audio id="music" loop preload="none">
+    <!-- O‘zingizning audio faylingizni keyin public/music.mp3 sifatida qo‘shishingiz mumkin. -->
+    <source src="music.mp3" type="audio/mpeg">
+  </audio>
+
+  <main class="shell">
+    <div class="frame">
+      <header class="hero" id="top">
+        <div class="ornament" aria-hidden="true">✧ ❦ ✧</div>
+        <div class="eyebrow">Muhabbat • Va’da • Abadiyat</div>
+        <h1>Xojiakbar <span>&amp;</span> Mohinur</h1>
+        <div class="gold-line"></div>
+        <p>Hayotimizning eng go‘zal sahifasini birgalikda boshlash arafasida, quvonchimizga sherik bo‘lishingizni istaymiz.</p>
+        <p class="eyebrow">To‘y marosimiga taklifnoma</p>
+        <button class="button" id="openInvitation">Taklifnomani ochish</button>
+      </header>
+
+      <section id="invitation">
+        <div class="eyebrow">Sizni kutamiz</div>
+        <h2>Quvonchimizga sherik bo‘ling</h2>
+        <p class="sub">Aziz mehmonimiz, sizni nikoh to‘yimizda ko‘rish biz uchun katta baxt. Ushbu kunni birgalikda unutilmas xotiraga aylantiraylik.</p>
+        <div class="details">
+          <div class="detail"><div class="symbol">✧</div><strong>Sana</strong><p id="dateDisplay">Sana hali belgilanmagan</p></div>
+          <div class="detail"><div class="symbol">◷</div><strong>Vaqt</strong><p id="timeDisplay">Vaqt hali belgilanmagan</p></div>
+          <div class="detail"><div class="symbol">⌖</div><strong>Manzil</strong><p id="venueDisplay">To‘yxona manzili keyin qo‘shiladi</p></div>
+        </div>
+      </section>
+
+      <section>
+        <div class="eyebrow">Katta kun yaqinlashmoqda</div>
+        <h2>To‘ygacha qolgan vaqt</h2>
+        <p class="sub" id="countdownMessage">To‘y sanasi belgilangach, ortga hisoblash shu yerda ko‘rinadi.</p>
+        <div class="countdown" aria-live="polite">
+          <div class="timebox"><strong id="daysLeft">—</strong><span>KUN</span></div>
+          <div class="timebox"><strong id="hoursLeft">—</strong><span>SOAT</span></div>
+          <div class="timebox"><strong id="minutesLeft">—</strong><span>DAQIQA</span></div>
+          <div class="timebox"><strong id="secondsLeft">—</strong><span>SONIYA</span></div>
+        </div>
+      </section>
+
+      <section id="calendar">
+        <div class="eyebrow">Yil taqvimi</div>
+        <h2>2029 — barcha 12 oy</h2>
+        <p class="sub">Har bir oyning kalendari avtomatik hisoblangan. To‘y sanasi belgilangach, tanlangan kun oltin rangda ajratiladi.</p>
+        <div class="calendar-grid" id="calendarGrid" aria-label="2029 yilning 12 oylik kalendari"></div>
+        <p class="calendar-note">Hafta kunlari: Du — Dushanba, Se — Seshanba, Ch — Chorshanba, Pa — Payshanba, Ju — Juma, Sh — Shanba, Ya — Yakshanba.</p>
+      </section>
+
+      <section id="location">
+        <div class="eyebrow">Manzil</div>
+        <h2>To‘y marosimi qayerda?</h2>
+        <div class="mapbox">
+          <div class="ornament" aria-hidden="true">⌖</div>
+          <p id="venueDescription">To‘yxona nomi va aniq manzili belgilangach, xarita havolasini shu yerga qo‘shamiz.</p>
+          <a class="button ghost" id="mapLink" href="https://maps.google.com/" target="_blank" rel="noopener noreferrer">Google Maps ochish</a>
+        </div>
+      </section>
+
+      <section id="wishes">
+        <div class="eyebrow">Yaxshi tilaklar</div>
+        <h2>Mehmonlar kitobi</h2>
+        <p class="sub">Bizga samimiy tilaklaringizni qoldiring.</p>
+        <form id="wishForm">
+          <label for="guestName">Ismingiz</label>
+          <input id="guestName" name="guestName" maxlength="70" autocomplete="name" placeholder="Ismingizni yozing" required>
+          <label for="guestWish">Tilagingiz</label>
+          <textarea id="guestWish" name="guestWish" maxlength="700" placeholder="Samimiy tilagingiz..." required></textarea>
+          <div class="form-actions"><button class="button" type="submit">Tilakni saqlash</button></div>
+        </form>
+        <p class="small-note">Hozirgi namuna tilaklarni faqat shu brauzerda saqlaydi. Barcha mehmonlar internet orqali ko‘rishi uchun keyin xavfsiz onlayn ma’lumotlar bazasini ulash kerak.</p>
+        <div class="wishes" id="wishesList"></div>
+      </section>
+      <footer class="foot">XOJIAKBAR &amp; MOHINUR · 2029</footer>
+    </div>
+  </main>
+
+  <script>
+    // TO‘Y SANASI ANIQLANGACH, shu qiymatni o‘zgartiring: "2029-08-25T18:00:00"
+    // Hozircha sana belgilanmagan, shuning uchun hech bir kun to‘y kuni deb ko‘rsatilmaydi.
+    const weddingDateTime = null;
+    // Masalan: const weddingDateTime = "2029-08-25T18:00:00";
+
+    // To‘yxona ma’lumotlarini keyin shu yerda yangilash mumkin.
+    const weddingVenue = "";
+    const weddingAddress = "";
+
+    const monthNames = [
+      "Yanvar","Fevral","Mart","Aprel","May","Iyun",
+      "Iyul","Avgust","Sentabr","Oktabr","Noyabr","Dekabr"
+    ];
+    const weekdays = ["Du","Se","Ch","Pa","Ju","Sh","Ya"];
+
+    function renderCalendars(){
+      const grid = document.getElementById("calendarGrid");
+      const weddingDate = weddingDateTime ? new Date(weddingDateTime) : null;
+      grid.innerHTML = "";
+      monthNames.forEach((month, monthIndex) => {
+        const card = document.createElement("article");
+        card.className = "month";
+        const heading = document.createElement("h3");
+        heading.textContent = `${month} 2029`;
+        card.appendChild(heading);
+        const days = document.createElement("div");
+        days.className = "days";
+        weekdays.forEach(day => {
+          const el = document.createElement("span");
+          el.className = "weekday";
+          el.textContent = day;
+          days.appendChild(el);
+        });
+        const firstDay = new Date(2029, monthIndex, 1).getDay();
+        const offset = (firstDay + 6) % 7; // Dushanbani haftaning birinchi kuni qiladi.
+        for(let i=0;i<offset;i++){
+          const empty = document.createElement("span");
+          empty.className = "empty";
+          empty.setAttribute("aria-hidden","true");
+          days.appendChild(empty);
+        }
+        const totalDays = new Date(2029, monthIndex + 1, 0).getDate();
+        for(let day=1;day<=totalDays;day++){
+          const el = document.createElement("span");
+          el.textContent = day;
+          if(weddingDate && weddingDate.getFullYear()===2029 &&
+             weddingDate.getMonth()===monthIndex && weddingDate.getDate()===day){
+            el.className = "wedding-day";
+            el.title = "To‘y kuni";
+            el.setAttribute("aria-label", `${day} ${month} — to‘y kuni`);
+          }
+          days.appendChild(el);
+        }
+        card.appendChild(days);
+        grid.appendChild(card);
+      });
+    }
+
+    function updateWeddingInfo(){
+      const dateEl = document.getElementById("dateDisplay");
+      const timeEl = document.getElementById("timeDisplay");
+      const venueEl = document.getElementById("venueDisplay");
+      const venueDescription = document.getElementById("venueDescription");
+      const mapLink = document.getElementById("mapLink");
+      if(weddingDateTime){
+        const date = new Date(weddingDateTime);
+        dateEl.textContent = date.toLocaleDateString("uz-UZ",{year:"numeric",month:"long",day:"numeric"});
+        timeEl.textContent = date.toLocaleTimeString("uz-UZ",{hour:"2-digit",minute:"2-digit"});
+      }
+      if(weddingVenue) venueEl.textContent = weddingVenue;
+      if(weddingAddress){
+        venueDescription.textContent = `${weddingVenue ? weddingVenue + " — " : ""}${weddingAddress}`;
+        mapLink.href = "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent(weddingAddress);
+      }
+    }
+
+    function updateCountdown(){
+      if(!weddingDateTime) return;
+      const distance = new Date(weddingDateTime).getTime() - Date.now();
+      const msg = document.getElementById("countdownMessage");
+      if(distance <= 0){
+        msg.textContent = "Buguningiz muborak bo‘lsin!";
+        ["daysLeft","hoursLeft","minutesLeft","secondsLeft"].forEach(id => document.getElementById(id).textContent="0");
+        return;
+      }
+      msg.textContent = "Ushbu quvonchli kungacha:";
+      document.getElementById("daysLeft").textContent = Math.floor(distance / 86400000);
+      document.getElementById("hoursLeft").textContent = Math.floor((distance % 86400000) / 3600000);
+      document.getElementById("minutesLeft").textContent = Math.floor((distance % 3600000) / 60000);
+      document.getElementById("secondsLeft").textContent = Math.floor((distance % 60000) / 1000);
+    }
+
+    document.getElementById("openInvitation").addEventListener("click", () => {
+      document.getElementById("invitation").scrollIntoView({behavior:"smooth"});
+      document.getElementById("music").play().then(() => {
+        document.getElementById("musicButton").textContent = "♫";
+      }).catch(() => {});
+    });
+
+    const music = document.getElementById("music");
+    document.getElementById("musicButton").addEventListener("click", () => {
+      if(music.paused){
+        music.play().then(() => document.getElementById("musicButton").textContent = "♫")
+          .catch(() => alert("Musiqa fayli hozircha qo‘shilmagan. Keyin music.mp3 faylini qo‘shishingiz mumkin."));
+      } else {
+        music.pause();
+        document.getElementById("musicButton").textContent = "🔇";
+      }
+    });
+
+    const wishForm = document.getElementById("wishForm");
+    const wishesList = document.getElementById("wishesList");
+    function loadWishes(){
+      let wishes = [];
+      try { wishes = JSON.parse(localStorage.getItem("xm-wedding-wishes") || "[]"); } catch(e) {}
+      wishesList.innerHTML = "";
+      wishes.slice().reverse().forEach(wish => {
+        const card = document.createElement("article");
+        card.className = "wish";
+        const name = document.createElement("strong");
+        name.textContent = wish.name;
+        const message = document.createElement("p");
+        message.textContent = wish.message;
+        card.append(name,message);
+        wishesList.appendChild(card);
+      });
+    }
+    wishForm.addEventListener("submit", event => {
+      event.preventDefault();
+      const name = document.getElementById("guestName").value.trim();
+      const message = document.getElementById("guestWish").value.trim();
+      if(!name || !message) return;
+      let wishes = [];
+      try { wishes = JSON.parse(localStorage.getItem("xm-wedding-wishes") || "[]"); } catch(e) {}
+      wishes.push({name,message});
+      try { localStorage.setItem("xm-wedding-wishes", JSON.stringify(wishes)); }
+      catch(e) { alert("Tilakni saqlab bo‘lmadi. Brauzer xotirasini tekshiring."); return; }
+      wishForm.reset();
+      loadWishes();
+    });
+
+    renderCalendars();
+    updateWeddingInfo();
+    updateCountdown();
+    setInterval(updateCountdown,1000);
+    loadWishes();
+  </script>
+</body>
+</html>
